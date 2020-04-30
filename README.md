@@ -1,6 +1,10 @@
 # Voyager
+![Flutter](https://img.shields.io/badge/Dart-Flutter-blue?logo=Flutter)
 
 Voyager is a Cultural Landmarks Discovery ML Powered Platform that helps travelers to discover fabulous places through identifying worldwide landmarks in real-time using AI technologies and provide them with needed information.
+
+## Screenshots
+<img src="https://raw.githubusercontent.com/Ba2dones/voyager/master/Screenshot1.png" width="30%"> <img src="https://raw.githubusercontent.com/Ba2dones/voyager/master/Screenshot2.png" width="30%"> <img src="https://raw.githubusercontent.com/Ba2dones/voyager/master/Screenshot3.png" width="30%">
 
 | Screenshot 1  | Screenshot 2 | Screenshot 3 | 
 | ------------- | ------------- | ------------- |
