@@ -15,4 +15,4 @@ The application was built using flutter sdk version : **1.18.0-9.0.pre.6**
    To run the app, make sure you have a device attached and run:
      `flutter run`
 
-    ** you will find a ready-to-install android build included in same repo directory :**    `voyager.apk`
+    **you will find a ready-to-install android build included in same repo directory :**    `voyager.apk`
