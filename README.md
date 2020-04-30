@@ -1,6 +1,14 @@
-# voyager
-The application was built using flutter sdk version : **1.18.0-9.0.pre.6**
+# Voyager
+
+Voyager is a Cultural Landmarks Discovery ML Powered Platform that helps travelers to discover fabulous places through identifying worldwide landmarks in real-time using AI technologies and provide them with needed information.
+
+
+![](./Screenshot1.png)   | ![](./Screenshot2.png) | ![](./Screenshot3.png) |
+
+
 ### Running the application code
+
+The application was built using flutter sdk version : **1.18.0-9.0.pre.6**
 
 1. #### Clone the App Repo
     `git clone https://github.com/Ba2dones/voyager.git`

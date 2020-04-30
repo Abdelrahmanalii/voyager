@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'home.dart';
 import 'utils/data.dart';
 import 'widgets/NavSideDrawer.dart';
-import 'widgets/PathNavigator.dart';
 
 class ContactUs extends StatefulWidget {
   @override
@@ -33,12 +32,11 @@ class _ContactUs extends State<ContactUs> {
   void _handleSubmitted(String name, String email, String msg) async {
     DbHelper reg = DbHelper();
     F.FeedbackModel feedback = F.FeedbackModel(name, email, msg);
-    int savedItemId = await reg.addFeedback(feedback);
+    await reg.addFeedback(feedback);
   }
 
   void feedbackSent() {
     _handleSubmitted(name.text, email.text, description.text);
-    bloc.submit();
     showDialog(
       context: context,
       builder: (BuildContext context) {

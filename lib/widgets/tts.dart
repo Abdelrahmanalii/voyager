@@ -8,13 +8,13 @@ class TextToSpeech extends StatefulWidget {
   TextToSpeech(this.desc, this.lang);
   @override
   State<StatefulWidget> createState() {
-    return _textTospeechState(desc, lang);
+    return TextTospeechState(desc, lang);
   }
 }
 
 enum TtsState { playing, stopped }
 
-class _textTospeechState extends State<TextToSpeech> {
+class TextTospeechState extends State<TextToSpeech> {
   FlutterTts _flutterTts = FlutterTts();
   final String desc;
   final String lang;
@@ -48,7 +48,7 @@ class _textTospeechState extends State<TextToSpeech> {
     "th": "th-TH",
     "tr": "tr-TR",
   };
-  _textTospeechState(this.desc, this.lang);
+  TextTospeechState(this.desc, this.lang);
   initState() {
     super.initState();
   }

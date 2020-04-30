@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'utils/data.dart';
 import 'widgets/NavSideDrawer.dart';
-import 'widgets/PathNavigator.dart';
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;

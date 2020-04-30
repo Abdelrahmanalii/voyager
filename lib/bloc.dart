@@ -18,12 +18,6 @@ class Bloc with Validators {
   Stream<bool> get submitValid => Observable.combineLatest3(
       email, name, description, (email, name, description) => true);
 
-  submit() {
-    final validEmail = _emailController.value;
-    final validName = _nameController.value;
-    final validFescription = _descriptionController.value;
-  }
-
   void dispose() {
     _emailController.close();
     _nameController.close();

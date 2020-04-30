@@ -9,7 +9,7 @@ import 'bloc.dart';
 
 class LoginScreen extends StatefulWidget {
   final Traveler travelerData;
-  LoginScreen({this.travelerData}) {}
+  LoginScreen({this.travelerData});
   @override
   _LoginScreenState createState() => new _LoginScreenState();
 }
@@ -104,14 +104,14 @@ class _LoginScreenState extends State<LoginScreen>
   void adminReg() async {
     DbHelper reg = DbHelper();
     Admin admin = Admin('admin', 'admin');
-    int addAdmin = await reg.adminRegister(admin);
+    await reg.adminRegister(admin);
   }
 
   void travelerRegister(
       String email, String password, String name, String language) async {
     DbHelper reg = DbHelper();
     Traveler traveler = Traveler(email, password, name, language);
-    int addTraveler = await reg.travelerRegister(traveler);
+    await reg.travelerRegister(traveler);
   }
 
   void goAdmin() {
@@ -500,7 +500,7 @@ class _LoginScreenState extends State<LoginScreen>
   }
 
   Widget signupPage() {
-    final Bloc bloc = Bloc();
+    Bloc();
     return new Container(
       height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
@@ -772,7 +772,7 @@ class _LoginScreenState extends State<LoginScreen>
                           _onDropDownItemSelected(newValueSelected);
                           chosenLanguage =
                               _lang[_languages.indexOf(_currentItemSelected)];
-                          final appData = LoginScreen();
+                          LoginScreen();
                         },
                         value: _currentItemSelected,
                         isExpanded: true,
@@ -849,14 +849,73 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
-  void invalidDataEntered() {
+  void invalidDataLang() {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('Warning'),
-          content: const Text(
-              '- Please enter a valid Email.\n- Please enter your full name.\n- Please confirm the same password.\n- Please choose a language.'),
+          content: const Text('- Please choose a language.'),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('Try Agian'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void invalidDataEmail() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Warning'),
+          content: const Text('- Please enter a valid Email.'),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('Try Agian'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void invalidDataPassword() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Warning'),
+          content: const Text('- Please confirm the same password.'),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('Try Agian'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void invalidDataName() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Warning'),
+          content: const Text('- Please enter your full name.'),
           actions: <Widget>[
             FlatButton(
               child: Text('Try Agian'),
@@ -872,15 +931,17 @@ class _LoginScreenState extends State<LoginScreen>
 
   void regAuth(String emailVal, String nameVal, String passwordVal,
       String passwordConfVal, String langVal) {
-    if (passwordConfVal == passwordVal &&
-        nameVal.length > 3 &&
-        langVal != null &&
-        emailVal.contains('@') &&
-        emailVal.contains('.')) {
+    if (emailVal.contains('@') == false && emailVal.contains('.') == false) {
+      invalidDataEmail();
+    } else if (nameVal.length < 3) {
+      invalidDataName();
+    } else if (passwordConfVal != passwordVal) {
+      invalidDataPassword();
+    } else if (langVal == null) {
+      invalidDataLang();
+    } else {
       travelerRegister(emailVal, passwordVal, nameVal, langVal);
       gotoLogin();
-    } else {
-      invalidDataEntered();
     }
   }
 
@@ -893,7 +954,7 @@ class _LoginScreenState extends State<LoginScreen>
   gotoLogin() {
     _controller.animateToPage(
       0,
-      duration: Duration(milliseconds: 800),
+      duration: Duration(milliseconds: 1000),
       curve: Curves.bounceOut,
     );
   }
@@ -901,7 +962,7 @@ class _LoginScreenState extends State<LoginScreen>
   gotoHome() {
     _controller.animateToPage(
       1,
-      duration: Duration(milliseconds: 800),
+      duration: Duration(milliseconds: 1000),
       curve: Curves.bounceOut,
     );
   }
@@ -909,7 +970,7 @@ class _LoginScreenState extends State<LoginScreen>
   gotoSignup() {
     _controller.animateToPage(
       2,
-      duration: Duration(milliseconds: 800),
+      duration: Duration(milliseconds: 1000),
       curve: Curves.bounceOut,
     );
   }
