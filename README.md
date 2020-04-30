@@ -3,7 +3,7 @@
 Voyager is a Cultural Landmarks Discovery ML Powered Platform that helps travelers to discover fabulous places through identifying worldwide landmarks in real-time using AI technologies and provide them with needed information.
 
 
-![](https://raw.githubusercontent.com/Ba2dones/voyager/master/Screenshot1.png)   | ![](https://raw.githubusercontent.com/Ba2dones/voyager/master/Screenshot2.png) | ![](https://raw.githubusercontent.com/Ba2dones/voyager/master/Screenshot3.png) |
+| ![](https://raw.githubusercontent.com/Ba2dones/voyager/master/Screenshot1.png) | ![](https://raw.githubusercontent.com/Ba2dones/voyager/master/Screenshot2.png) | ![](https://raw.githubusercontent.com/Ba2dones/voyager/master/Screenshot3.png) |
 
 
 ### Running the application code
