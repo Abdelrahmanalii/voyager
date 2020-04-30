@@ -25,3 +25,9 @@ The application was built using flutter sdk version : **1.18.0-9.0.pre.6**
      `flutter run`
 
     **you will find a ready-to-install android build included in same repo directory :**    `voyager.apk`
+    
+### WIP
+
+1. #### Firebase Support
+
+2. #### Add Review / Rate
