@@ -16,6 +16,6 @@ Future navigateToSubPageHome(context) async {
 }
 
 Future navigateToSubPageLogout(context) async {
-  Navigator.push(
+  Navigator.pushReplacement(
       context, MaterialPageRoute(builder: (context) => MyHomePage()));
 }
