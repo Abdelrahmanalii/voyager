@@ -1,4 +1,3 @@
-
 # voyager
 The application was built using flutter sdk version : ** 1.18.0-9.0.pre.6 **
 ### Running the application code
